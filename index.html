@@ -1,715 +1,201 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive_Resume-Eclavea</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-      html {
-    font-size: 16px;
-    }
-    /* ========================= BODY ========================= */
-    body {
-        font-family: Arial, sans-serif;
-        color: #dee2e4;
-        margin: 0;
-        padding: 0;
-        background-image: url('Background.png');
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-
-    /* ========================= MAIN CONTAINER ========================= */
-    .main-container {
-        min-height: 100vh;
-        color: #cccfd1;
-        padding-top: 60px; /* To prevent content from hiding behind the fixed header */
-        width: 100%; /* Ensure it spans the full width */
-    }
-
-
-    /* ========================= HEADER   ========================= */
-    .header {
-        background-color: #121618;
-        color: #F4F4F9;
-        padding: 1rem;
-        padding-right: 30px;    
-        padding-left: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 10;
-        box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
-    }
-
-    .header-left {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .profile-pic {
-        border-radius: 50%;
-        height: 40px;
-        width: 40px; /* Ensure the image doesn't shrink */
-        object-fit: cover; /* Maintain aspect ratio */
-    }
-
-    .header-name {
-        color: #0073BB;
-        font-size: 1rem;
-    }
-
-    /* ========================= NAVIGATION   ========================= */
-    .nav {
-        display: flex;
-        gap: 10px;
-    }
-
-    .nav-link {
-        color: #007C7D;
-        font-weight: 500;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        font-size: 18px;
-    }
-
-    .nav-link:hover {
-        color: #322fb3;
-        text-decoration: underline;
-    }
-
-    /* Hamburger Menu */
-    .hamburger-menu {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 4px;
-    }
-
-    .hamburger-bar {
-        width: 25px;
-        height: 3px;
-        background-color: #F4F4F9;
-        transition: all 0.3s ease;
-    }
-
-    .mobile-nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #121618;
-        width: 100%; /* Adjust to occupy full width */
-        text-align: center;
-    }
-
-    .mobile-nav-link {
-        padding: 10px;
-        border-top: 1px solid #F4F4F9;
-        color: #007C7D;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
-
-    .mobile-nav-link:hover {
-        background-color: #0073BB;
-        color: #F4F4F9;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-        .nav {
-            display: none;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', sans-serif;
         }
-        .hamburger-menu {
+
+        body {
+            background: steelblue;
+        }
+
+        .container {
+            background: #f5f5f5;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 15px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .img-area {
+            width: 250px;
+            height: 250px;
+            border-radius: 20%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 15px groove steelblue;
+        }
+
+        .img-area img {
+            width: 100%;
+			height: 100%;
+            display: block;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        h1{
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+			text-align: center;
+            background: #00b6c4;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .honor{
+            font-size: 12px;
+        }
+        .main {
             display: flex;
-        }
-        .mobile-nav.active {
-            display: flex;
-        }
-    }
-
-    /* ========================= SECTION ========================= */
-    .section {
-        padding: 5px;
-        min-height: 100vh; /* Ensure each section takes up at least the full screen height */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
-    }
-
-    /* Add styles for the horizontal line */
-    hr {
-        width: 100%;
-        border: none;
-        border-top: 2px solid #cccfd1;
-        margin: 0;
-    }
-
-    /* Adjust padding and margins to better use screen space */
-    .home-content, .about-content, .portfolio-projects, .contact-form-container {
-        width: 100%;
-        max-width: 1200px;
-        padding: 20px;
-        box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
-    }
-
-    .home-content, .about-content, .portfolio-projects, .contact-form-container {
-        flex-grow: 1; /* Ensures these sections grow to fill available space */
-    }
-
-
-    /* ========================= HOME SECTION   ========================= */
-    .home-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px; /* Adjust the gap as needed */
-    }
-
-    .home-text {
-        flex: 1; /* Adjusts the width of the text container */
-        padding: 2rem;
-    }
-
-    .home-image {
-        flex: 2; /* Adjusts the width of the image container */
-        display: flex;
-        justify-content: center; /* Centers the image horizontally */
-    }
-
-    .highlight {
-        color: #007C7D;
-    }
-
-    .button-group {
-        margin-top: 16px;
-        display: flex;
-        gap: 16px;
-        justify-content: flex-start; /* Aligns buttons to the left */
-    }
-
-    .profile-pic-large {
-        border-radius: 50%;
-        width: 100%;
-        width: 400px;
-        box-shadow: 0 4px 6px rgba(159, 52, 52, 0.1);
-        object-fit: cover; /* Maintain aspect ratio */
-    }
-
-    .home-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-    .home-subtitle {
-        font-size: 2rem;
-        margin-top: 16px;
-    }
-
-    .home-description {
-        margin-top: 16px;
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-
-      .home-content {
-        flex-direction: column; /* Stack text and image vertically */
-        text-align: center;
+            flex-wrap: wrap;
         }
 
-        .home-title {
-            font-size: 2rem;
+        .left,
+        .right {
+            flex: 1;
+            padding: 0 20px;
+        }
+        a{
+            color: black;
+        }
+        p,
+        ul {
+            line-height: 2;
+            margin-bottom: 10px;
+            margin-left: 10px;
         }
 
-        .home-subtitle {
-            font-size: 1.5rem;
+        ul {
+            list-style-type: none;`
         }
 
-        .home-description {
-            font-size: 1rem;
+		.skill-bar {
+            width: 100%;
+            height: 15px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
 
-        .profile-pic-large {
-            max-width: 300px;
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            background-color: #00b6c4;
         }
-    }
 
-    /* ========================= ABOUT SECTION   ========================= */
-    .about-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px; /* Adjust the gap as needed */
-    }
-
-    .about-text {
-        flex: 1; /* Adjusts the width of the text container */
-    }
-
-    .about-image {
-        flex: 1; /* Adjusts the width of the image container */
-        display: flex;
-        justify-content: center; /* Centers the image horizontally */
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-    .section-description {
-        margin-top: 16px;
-        max-width: 40rem;
-        margin-left: 0; /* Aligns the text content to the left */
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    /* Media Queries for About Section */
-    @media (max-width: 768px) {
-      .about-content {
-          flex-direction: column; /* Stack text and image vertically */
-          text-align: center;
-      }
-      .section-title {
-          font-size: 2rem;
-      }
-      .section-description {
-          font-size: 1rem;
-      }
-      .profile-pic-large {
-          max-width: 350px;
-      }
-    }
-
-    /* ========================= PORTFOLIO SECTION   ========================= */
-    .portfolio-projects {
-    margin-top: 0px;
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    flex-wrap: wrap; /* Wrap projects in smaller screens */
-    }
-
-    .project-card {
-        background-color: transparent;
-        color: #e6e8ea;
-        padding: 20px;
-        border-radius: 25px;
-        text-align: center;
-        flex-basis: 45%; /* Take up about 45% of the container width */
-        margin: 10px;
-    }
-
-    .project-image {
-        border-radius: 8px;
-        height: 100%px;
-        width: 100%;
-    }
-
-    .project-description{
-        background: rgb(55,51,53);
-        background: linear-gradient(90deg, rgba(55,51,53,1) 0%, 
-        rgba(102,119,143,1) 100%, rgba(148,187,233,1) 100%);
-    }
-
-    /* Media Queries for Portfolio Section */
-    @media (max-width: 768px) {
-        .portfolio-projects {
-            flex-direction: column; /* Stack projects vertically */
-            align-items: center;
-        }
-        .project-card {
-            flex-basis: 100%; /* Take up full width on smaller screens */
-        }
-    }
-
-    /* ========================= CONTACT SECTION   ========================= */
-    .contact-form-container {
-        margin-top: 16px;
-        max-width: 40rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .form-control {
-        position: relative;
-        margin: 16px 0 32px;
-        width: 100%;
-    }
-
-    .form-control input,
-    .form-control textarea {
-        background-color: transparent;
-        border: 0;
-        border-bottom: 2px solid rgb(206, 200, 200);
-        display: block;
-        width: 100%;
-        padding: 12px 0;
-        font-size: 1rem;
-        color: rgb(232, 228, 228);
-    }
-
-    .form-control input:focus,
-    .form-control input:valid,
-    .form-control textarea:focus,
-    .form-control textarea:valid {
-        outline: 0;
-        border-bottom-color: #0073BB;
-    }
-
-    .form-control label {
-        position: absolute;
-        top: 12px;
-        left: 0;
-        pointer-events: none;
-    }
-
-    .form-control label span {
-        display: inline-block;
-        font-size: 1rem;
-        min-width: 5px;
-        color: rgb(219, 214, 214);
-        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    .form-control input:focus + label span,
-    .form-control input:valid + label span,
-    .form-control textarea:focus + label span,
-    .form-control textarea:valid + label span {
-        color: #0073BB;
-        transform: translateY(-24px);
-    }
-
-    /* ========================= SOCIAL LINKS ========================= */
-    .social-links {
-        margin-top: 3rem;
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        background-color: #121618;
-        border-radius: 5%;
-        font-size: 20px;
-    }
-
-    .nav-link i {
-        margin-right: 8px;
-    }
-
-    .nav-link:hover i {
-        color: #322fb3; /* Match the hover color of the text */
-    }
-
-
-    /* ========================= FOOTER   ========================= */
-    .footer {
-        background-color: #007C7D;
-        color: #F4F4F9;
-        padding: 16px;
-        text-align: center;
-        font-size: 0.9rem;
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    /* ========================= BUTTON ========================= */
-    .custom-button {
-        background-color: #0073BB;
-        color: #F4F4F9;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .custom-button:hover {
-        background-color: #007C7D;
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .custom-button:active {
-        background-color: #007C7D;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transform: translateY(0);
-    }
-
-
-    </style>
-  </head>
-  
-<body>
-  <!-- ========================= MAIN CONTAINER ========================= -->
-  <div class="main-container">
-    
-    <!-- ========================= HEADER SECTION ========================= -->
-    <div class="header">
-      <div class="header-left">
-          <img src="icon.png" alt="Profile Picture" class="profile-pic">
-          <h1 class="header-name">CipherPaul</h1>
-      </div>
-      <nav class="nav">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#portfolio" class="nav-link">Portfolio</a>
-          <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-      <div class="hamburger-menu">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-      </div>
-      <div class="mobile-nav">
-        <a href="#home" class="mobile-nav-link">Home</a>
-        <a href="#about" class="mobile-nav-link">About</a>
-        <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
-    </div>  
-  </div>
-      
-    <!-- ========================= HOME SECTION ========================= -->
-    <section id="home" class="section home">
-      <div class="home-content">
-        <div class="home-text">
-          <h1 class="home-title">Hey there!</h1>
-          <h2 class="home-subtitle">I'm <span class="highlight">Peter Paul F. Eclavea</span></h2>
-          <p class="home-description">
-            A college student deeply interested in Programming. This portfolio represents a handpicked selection of my work, 
-            projects, and experiences, highlighting my skills and creativity.
-          </p>
-          <div class="button-group">
-            <button id="download-cv" class="custom-button">Download CV</button>
-            <button id="contact-me" class="custom-button">Contact Me</button>
-          </div>
-        </div>
-        <div class="home-image">
-          <img src="E-SPORTS_PETER PAUL F. ECLAVEA.jpeg" alt="Profile Picture" class="profile-pic-large">
-        </div>
-      </div>
-    </section>
-    <hr>
-
-    <!-- ========================= ABOUT SECTION ========================= -->
-    <section id="about" class="section about">
-      <div class="about-content">
-        <div class="about-text">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-description">Within this portfolio, you'll find a collection of projects showcasing my skills 
-            using HTML, CSS, and JavaScript.</p>
-            <br>
-          <div class="button-group">
-            <button id="read-more" class="custom-button">Read More</button>
-            <button id="lets-talk" class="custom-button">Let's Talk</button>
-          </div>
-        </div>
-        <div class="about-image">
-          <img src="Figma1 1.png" alt="About Me Picture" class="profile-pic-large">
-        </div>
-      </div>
-    </section>
-    <hr>    
-
-    <!-- ========================= PORTFOLIO SECTION ========================= -->
-    <section id="portfolio" class="section portfolio">
-      <div class="section-content">
-        <h2 class="section-title">Portfolio</h2>
-      </div>
-      <div class="portfolio-projects">
-        <div class="project-card">
-          <a href="https://lpeter29.github.io/ipt101-calculator-app/"
-          target="_blank">
-          <img src="calculator.png" alt="Project Screenshot" class="project-image">
-          </a> 
-          <p class="project-description">
-            Calculator App 
-          </p>
-          <p class="project-description">
-            using HTML and CSS
-          </p>
-        </div>
-        <div class="project-card">
-          <a href="https://lpeter29.github.io/rock-paper-scissor/"
-          target="_blank">
-          <img src="RPS.png" alt="Project Screenshot" class="project-image">
-          </a> 
-          <p class="project-description">
-            Rock-Paper-Scissor 
-          </p>
-          <p class="project-description">
-            using HTML, CSS and JavaScript
-          </p>
-        </div>
-      </div>
-      <div class="portfolio-projects">
-        <div class="project-card">
-          <a href="https://lpeter29.github.io/online-resume/"
-          target="_blank">
-          <img src="Resume.png" alt="Project Screenshot" class="project-image">
-          </a> 
-          <p class="project-description">
-            Online Resume
-          </p>
-          <p class="project-description">
-            using HTML and CSS
-          </p>
-        </div>
-        <div class="project-card">
-          <a href="https://www.figma.com/design/afpDk86HjbRmfwtWAv6ROt/ASSIGNMENT-%232_ECLAVEA?node-id=0-1&t=83sp2s0pV6yRqWm7-1"
-          target="_blank">
-          <img src="Desktop - 1.png" alt="Project Screenshot" class="project-image">
-          </a> 
-          <p class="project-description">
-            Portfolio Website
-          </p>
-          <p class="project-description">
-            using Figma
-          </p>
-        </div>
-      </div>
-    </div>
-    </section>
-    <hr>
-
-    <!-- ========================= CONTACT SECTION ========================= -->
-    <section id="contact" class="section contact">
-      <div class="section-content">
-        <h2 class="section-title">Contact</h2>
-      </div>
-      <div class="contact-form-container">
-        <form class="contact-form">
-          <div class="form-control">
-            <input type="text" required>
-            <label><span>Company/Owner Name</span></label>
-          </div>
-          <div class="form-control">
-            <input type="text" required>
-            <label><span>Email</span></label>
-          </div>
-          <div class="form-control">
-            <textarea required></textarea>
-            <label><span>Description/Notes</span></label>
-          </div>
-          <button id="submit-form" type="submit" class="custom-button">Submit</button>
-        </form>
-        <div class="social-links">
-          <a href="https://www.facebook.com/peterpaul.eclavea?mibextid=ZbWKwL" target="_blank" class="nav-link"><i class="fab fa-facebook"></i> Facebook</a>
-          <a href="https://www.instagram.com/lpeter_29/" target="_blank" class="nav-link"><i class="fab fa-instagram"></i> Instagram</a>
-          <a href="#" id="copy-number" class="nav-link"><i class="fas fa-phone"></i> Contact Number</a>
-          <a href="https://github.com/lpeter29" target="_blank" class="nav-link"><i class="fab fa-github"></i> Github</a>
-        </div>
-  
-      </div>
-    </section>
-    <hr>
-
-    <!-- ========================= FOOTER SECTION ========================= -->
-    <footer class="footer">
-      <p>Copyright &copy; 2021 All Rights Reserved</p>
-    </footer>
-    <hr>
-  </div>
-
-  <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const links = document.querySelectorAll('.nav-link');
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - document.querySelector('.header').offsetHeight,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    // Close mobile navigation menu
-                    mobileNav.classList.remove('active');
-                    document.body.style.overflow = ''; // Re-enable scrolling
-                    // Scroll to section with smooth behavior
-                    window.scrollTo({
-                        top: targetSection.offsetTop - document.querySelector('.header').offsetHeight,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        hamburgerMenu.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            if (mobileNav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden'; // Disable scrolling on the body when menu is open
-            } else {
-                document.body.style.overflow = ''; // Re-enable scrolling when menu is closed
+        @media only screen and (max-width: 600px) {
+            .left,
+            .right {
+                flex: none;
+                width: 100%;
             }
-        });
-            
-        // Adding event listeners to buttons for notifications
-        document.getElementById('download-cv').addEventListener('click', function() {
-            alert('CV Downloading...');
-        });
+        }
+    </style>
+</head>
 
-        document.getElementById('contact-me').addEventListener('click', function() {
-            alert('Contact form opening...');
-        });
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="img-area">
+                <img src="PETER PAUL F. ECLAVEA.jpeg" alt="profile_picture">
+            </div>
+            <h1>Peter Paul F. Eclavea</h1>
+            <h3>2nd year College Student</h3>
+        </div>
 
-        document.getElementById('read-more').addEventListener('click', function() {
-            alert('Loading more info...');
-        });
-
-        document.getElementById('lets-talk').addEventListener('click', function() {
-            alert('Opening chat...');
-        });
-
-        document.getElementById('submit-form').addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent form submission for the demo
-            alert('Form submitted!');
-        });
-        document.getElementById('copy-number').addEventListener('click', function(e) {
-            e.preventDefault();
-            const phoneNumber = '09215949177';
-            navigator.clipboard.writeText(phoneNumber).then(function() {
-                alert('Phone number copied to clipboard!');
-            }, function(err) {
-                alert('Failed to copy text: ' + err);
-            });
-        });
-    });
-
-  </script>
+        <div class="main">
+            <div class="left">
+                <h2><i class="fas fa-user"></i> Contact Information</h2>
+                <p><i class="fas fa-location-arrow"></i><strong> Location:</strong> Brgy Ibabang Iyam, Lucena City</p>
+                <p><i class="fas fa-envelope"></i><strong> Email:</strong> peterpauleclavea0629@email.com</p>
+                <p><i class="fab fa-facebook"></i><strong> Facebook:</strong> <a href="https://www.facebook.com/peterpaul.eclavea?mibextid=ZbWKwL"> Peter Paul Eclavea</a></p>
+                <p><i class="fab fa-github"></i><strong> Github:</strong> <a href="https://github.com/lpeter29"> lpeter29</a></p>
+                <p><i class="fas fa-phone"></i><strong> Phone:</strong> 09215949177</p>
+                <h2><i class="fas fa-compass"></i> Skills</h2>
+                <ul>
+                    <li><strong>HTML/CSS</strong>
+						<div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 30%;"></div>
+                        </div>
+					</li>
+                    <li><strong>Python</strong>
+						<div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 45%;"></div>
+                        </div>
+					</li>
+                    <li><strong>Figma</strong>
+						<div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 25%;"></div>
+                        </div>
+					</li>
+                    <li><Strong>C++</Strong>
+						<div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 20%;"></div>
+                        </div>
+					</li>
+                </ul>
+                <h2><i class="fas fa-user-graduate"></i> Education</h2>
+                <ul>
+                    <li>
+                        <strong>Quezon National High School</strong>(2016-2020) <br>
+                        <strong class="honor">With honor student</strong> 
+                    </li>
+                    <li><strong>STI Lucena College (STEM) </strong> 2020-2022 <br>
+                        <strong class="honor">With high honor student</strong>
+                         </li>
+                    <li><strong>Dalubhasaan ng Lungsod ng Lucena (BSIT)</strong> 2022 - Present
+                    </li>
+                </ul>
+            </div>
+			<div class="right">
+				<h2><i class="fas fa-pen"></i> Objective</h2>
+				<p>
+					To secure a challenging position in a reputable
+					organization to expand my learnings, skills, and
+					knowledge. Secure a responsible career
+					opportunity to fully utilize my training and skills
+					while making a significant contribution to the
+					success of the company.
+				</p>
+				<h2><i class="fas fa-sitemap"></i> Organizations</h2>
+				<p>
+					<strong>Knights of Columbus</strong><br>
+					2022 - Present (2nd Degree)
+					<br>
+					<strong>IT Paradigm</strong><br>
+					2022 - Present (Programming Team)
+				</p>
+				<h2><i class="fas fa-language"></i> Languages</h2>
+				<p>
+					<strong>English</strong> <br> - Professional Working Proficiency <br>
+					<strong>Tagalog</strong> <br> - Native or Bilingual Proficiency
+				</p>
+			</div>
+        </div>
+    </div>
 </body>
+
 </html>
