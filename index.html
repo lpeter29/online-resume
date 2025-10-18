@@ -7,113 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive_Resume-Eclavea</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', sans-serif;
-        }
-
-        body {
-            background: steelblue;
-        }
-
-        .container {
-            background: #f5f5f5;
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 15px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .img-area {
-            width: 250px;
-            height: 250px;
-            border-radius: 20%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 15px groove steelblue;
-        }
-
-        .img-area img {
-            width: 100%;
-			height: 100%;
-            display: block;
-        }
-
-        h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        h1{
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-			text-align: center;
-            background: #00b6c4;
-            color: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            font-size: 20px;
-        }
-        .honor{
-            font-size: 12px;
-        }
-        .main {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .left,
-        .right {
-            flex: 1;
-            padding: 0 20px;
-        }
-        a{
-            color: black;
-        }
-        p,
-        ul {
-            line-height: 2;
-            margin-bottom: 10px;
-            margin-left: 10px;
-        }
-
-        ul {
-            list-style-type: none;`
-        }
-
-		.skill-bar {
-            width: 100%;
-            height: 15px;
-            background-color: #ddd;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .skill-bar-fill {
-            height: 100%;
-            border-radius: 10px;
-            background-color: #00b6c4;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .left,
-            .right {
-                flex: none;
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -123,7 +20,7 @@
                 <img src="PETER PAUL F. ECLAVEA.jpeg" alt="profile_picture">
             </div>
             <h1>Peter Paul F. Eclavea</h1>
-            <h3>2nd year College Student</h3>
+            <h3>4th year College Student</h3>
         </div>
 
         <div class="main">
@@ -134,60 +31,190 @@
                 <p><i class="fab fa-facebook"></i><strong> Facebook:</strong> <a href="https://www.facebook.com/peterpaul.eclavea?mibextid=ZbWKwL"> Peter Paul Eclavea</a></p>
                 <p><i class="fab fa-github"></i><strong> Github:</strong> <a href="https://github.com/lpeter29"> lpeter29</a></p>
                 <p><i class="fas fa-phone"></i><strong> Phone:</strong> 09215949177</p>
-                <h2><i class="fas fa-compass"></i> Skills</h2>
-                <ul>
-                    <li><strong>HTML/CSS</strong>
-						<div class="skill-bar">
-                            <div class="skill-bar-fill" style="width: 30%;"></div>
+                <h2><i class="fas fa-compass"></i> Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fab fa-python"></i>
+                            <span class="skill-name">Python</span>
                         </div>
-					</li>
-                    <li><strong>Python</strong>
-						<div class="skill-bar">
-                            <div class="skill-bar-fill" style="width: 45%;"></div>
+                        <div class="experience-info">
+                            <span class="experience-duration">3.5+ years</span>
+                            <span class="experience-level">Intermediate</span>
                         </div>
-					</li>
-                    <li><strong>Figma</strong>
-						<div class="skill-bar">
-                            <div class="skill-bar-fill" style="width: 25%;"></div>
+                        <div class="skill-description">Web development, data analysis, automation scripts</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fab fa-html5"></i>
+                            <span class="skill-name">HTML/CSS/JavaScript</span>
                         </div>
-					</li>
-                    <li><Strong>C++</Strong>
-						<div class="skill-bar">
-                            <div class="skill-bar-fill" style="width: 20%;"></div>
+                        <div class="experience-info">
+                            <span class="experience-duration">3+ years</span>
+                            <span class="experience-level">Intermediate</span>
                         </div>
-					</li>
-                </ul>
+                        <div class="skill-description">Responsive design, modern CSS techniques, DOM manipulation</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fab fa-react"></i>
+                            <span class="skill-name">React Native</span>
+                        </div>
+                        <div class="experience-info">
+                            <span class="experience-duration">2.5+ years</span>
+                            <span class="experience-level">Intermediate</span>
+                        </div>
+                        <div class="skill-description">Cross-platform mobile development, component-based architecture</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fab fa-python"></i>
+                            <span class="skill-name">Django</span>
+                        </div>
+                        <div class="experience-info">
+                            <span class="experience-duration">3+ years</span>
+                            <span class="experience-level">Intermediate</span>
+                        </div>
+                        <div class="skill-description">Web framework, REST APIs, database management, MVC architecture</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fas fa-paint-brush"></i>
+                            <span class="skill-name">Figma</span>
+                        </div>
+                        <div class="experience-info">
+                            <span class="experience-duration">3+ year</span>
+                            <span class="experience-level">Intermediate</span>
+                        </div>
+                        <div class="skill-description">UI/UX design, prototyping, wireframing</div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <i class="fas fa-code"></i>
+                            <span class="skill-name">C++</span>
+                        </div>
+                        <div class="experience-info">
+                            <span class="experience-duration">1+ year</span>
+                            <span class="experience-level">Beginner</span>
+                        </div>
+                        <div class="skill-description">Object-oriented programming, algorithms</div>
+                    </div>
+                </div>
+                
                 <h2><i class="fas fa-user-graduate"></i> Education</h2>
                 <ul>
                     <li>
-                        <strong>Quezon National High School</strong>(2016-2020) <br>
-                        <strong class="honor">With honor student</strong> 
+                        <strong>Quezon National High School</strong> <span class="education-duration">(2016 - 2020)</span><br>
+                        <span class="education-level">Secondary Education</span><br>
+                        <strong class="honor">With Honor Student</strong>
                     </li>
-                    <li><strong>STI Lucena College (STEM) </strong> 2020-2022 <br>
-                        <strong class="honor">With high honor student</strong>
+                    <li>
+                        <strong>STI Lucena College</strong> <span class="education-duration">(2020 - 2022)</span><br>
+                        <span class="education-level">Senior High School (STEM Track)</span><br>
+                        <strong class="honor">With High Honor Student</strong>
                          </li>
-                    <li><strong>Dalubhasaan ng Lungsod ng Lucena (BSIT)</strong> 2022 - Present
+                    <li>
+                        <strong>Dalubhasaan ng Lungsod ng Lucena</strong> <span class="education-duration">(2022 - Present)</span><br>
+                        <span class="education-level">Bachelor of Science in Information Technology (BSIT)</span><br>
+                        <span class="education-status">Currently Enrolled - 4th Year</span>
                     </li>
                 </ul>
             </div>
 			<div class="right">
 				<h2><i class="fas fa-pen"></i> Objective</h2>
 				<p>
-					To secure a challenging position in a reputable
-					organization to expand my learnings, skills, and
-					knowledge. Secure a responsible career
-					opportunity to fully utilize my training and skills
-					while making a significant contribution to the
-					success of the company.
+					Motivated 4th-year BSIT student with hands-on experience in Python development, 
+					web technologies, and UI/UX design. Proven leadership skills through active 
+					participation in student organizations and project management roles. Seeking 
+					opportunities to apply technical skills and collaborative mindset in remote, 
+					hybrid, or traditional work environments. Committed to delivering quality 
+					solutions while continuously expanding expertise in emerging technologies.
 				</p>
+				
+				<h2><i class="fas fa-users"></i> General Skills</h2>
+				<div class="general-skills-container">
+					<div class="general-skill-item">
+						<div class="general-skill-header">
+							<i class="fas fa-fire"></i>
+							<span class="general-skill-name">Works Well Under Pressure</span>
+						</div>
+						<div class="general-skill-description">Maintains composure and delivers quality results in high-stress situations</div>
+					</div>
+					
+					<div class="general-skill-item">
+						<div class="general-skill-header">
+							<i class="fas fa-lightbulb"></i>
+							<span class="general-skill-name">Independent Decision Making</span>
+						</div>
+						<div class="general-skill-description">Capable of making quick, informed decisions during emergencies or critical situations</div>
+					</div>
+					
+					<div class="general-skill-item">
+						<div class="general-skill-header">
+							<i class="fas fa-handshake"></i>
+							<span class="general-skill-name">Team Collaboration</span>
+						</div>
+						<div class="general-skill-description">Effective communication and cooperation in group projects and team environments</div>
+					</div>
+					
+					<div class="general-skill-item">
+						<div class="general-skill-header">
+							<i class="fas fa-clock"></i>
+							<span class="general-skill-name">Time Management</span>
+						</div>
+						<div class="general-skill-description">Efficiently prioritizes tasks and meets deadlines consistently</div>
+					</div>
+					
+					<div class="general-skill-item">
+						<div class="general-skill-header">
+							<i class="fas fa-graduation-cap"></i>
+							<span class="general-skill-name">Continuous Learning</span>
+						</div>
+						<div class="general-skill-description">Adaptable and eager to learn new technologies and methodologies</div>
+					</div>
+				</div>
+				
 				<h2><i class="fas fa-sitemap"></i> Organizations</h2>
-				<p>
-					<strong>Knights of Columbus</strong><br>
-					2022 - Present (2nd Degree)
-					<br>
-					<strong>IT Paradigm</strong><br>
-					2022 - Present (Programming Team)
-				</p>
+				<div class="organization-item">
+					<div class="org-header">
+						<strong>DLL E.L.I.T.E</strong>
+						<span class="org-duration">2025 - Present</span>
+					</div>
+					<div class="org-role">Member</div>
+				</div>
+				
+				<div class="organization-item">
+					<div class="org-header">
+						<strong>Department Student Council</strong>
+						<span class="org-duration">2023-2026</span>
+					</div>
+					<div class="org-roles">
+						<div class="org-role">2023-2024 - Associate House Leader of Python</div>
+						<div class="org-role">2024-2025 - Department Secretary</div>
+						<div class="org-role">2025-2026 - Department Project Leader</div>
+					</div>
+				</div>
+				
+				<div class="organization-item">
+					<div class="org-header">
+						<strong>Knights of Columbus</strong>
+						<span class="org-duration">2022 - Present</span>
+					</div>
+					<div class="org-role">2nd Degree</div>
+				</div>
+				
+				<div class="organization-item">
+					<div class="org-header">
+						<strong>IT Paradigm</strong>
+						<span class="org-duration">2022 - Present</span>
+					</div>
+					<div class="org-role">Programming Team</div>
+				</div>
 				<h2><i class="fas fa-language"></i> Languages</h2>
 				<p>
 					<strong>English</strong> <br> - Professional Working Proficiency <br>
